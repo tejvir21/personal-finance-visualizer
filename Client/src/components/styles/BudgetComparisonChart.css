@@ -1,0 +1,28 @@
+/* Card styling for the chart */
+.card {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Chart heading */
+.card h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5em;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Tooltip styling (if needed for customization) */
+.recharts-tooltip-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,33 @@
+.transaction-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-form h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.transaction-form input,
+.transaction-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.transaction-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.transaction-form button:hover {
+  background-color: #0056b3;
+}
