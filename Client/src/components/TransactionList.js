@@ -3,7 +3,9 @@ import './styles/TransactionList.css';
 
 function TransactionList({ transactions, onUpdate }) {
   const handleDelete = async (id) => {
-    await fetch('http://localhost:5000/api/transactions/' + id, { method: 'DELETE' });
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/transactions';
+
+    await fetch(`${apiUrl}/transactions/` + id, { method: 'DELETE' });
     onUpdate();
   };
 

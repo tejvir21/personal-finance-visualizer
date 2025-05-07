@@ -21,7 +21,9 @@ function TransactionForm({ onAdd }) {
       return alert('All fields are required');
     }
 
-    await fetch('http://localhost:5000/api/transactions', {
+    const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/transactions';
+
+    await fetch(`${apiUrl}/transactions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
