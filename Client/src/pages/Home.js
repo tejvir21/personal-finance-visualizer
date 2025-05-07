@@ -8,8 +8,10 @@ import './styles/Home.css';
 function Home() {
   const [transactions, setTransactions] = useState([]);
 
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/transactions';
+
   const fetchTransactions = async () => {
-    const res = await fetch('http://localhost:5000/api/transactions');
+    const res = await fetch(`${apiUrl}/transactions`);
     const data = await res.json();
     setTransactions(data);
   };

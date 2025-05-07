@@ -5,15 +5,17 @@ import './styles/Budget.css';
 const categories = ['Food', 'Transport', 'Rent', 'Utilities', 'Shopping', 'Others'];
 
 function Budget() {
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api/transactions';
+
   const [budgets, setBudgets] = useState({});
   const [transactions, setTransactions] = useState([]);
 
   const fetchData = async () => {
-    const res1 = await fetch('http://localhost:5000/api/transactions');
+    const res1 = await fetch(`${apiUrl}/transactions`);
     const data1 = await res1.json();
     setTransactions(data1);
 
-    const res2 = await fetch('http://localhost:5000/api/budgets');
+    const res2 = await fetch(`${apiUrl}/budgets`);
     const data2 = await res2.json();
     const map = {};
     data2.forEach(b => map[b.category] = b.amount);
@@ -25,7 +27,8 @@ function Budget() {
   };
 
   const handleSave = async () => {
-    await fetch('http://localhost:5000/api/budgets', {
+
+    await fetch(`${apiUrl}/budgets`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(budgets)
